@@ -2031,6 +2031,40 @@ will returns the sql command used to do migrate for that
 model (firstmodels)
 '''
 
+#    CRUD in python shell
+'''
+
+
+run python manage.py shell
+
+it will opens shell on terminal
+
+INSERT:
+
+>>> data = FirstModel(firstname='raja',lastname='kavin') 
+>>> data.save()
+>>> data1 = FirstModel(firstname='raja1',lastname='kavin1') 
+>>> data1.save() 
+>>> data2 = FirstModel(firstname='raja2',lastname='kavin2') 
+>>> data2.save() 
+>>> FirstModel.object.all()
+
+UPDATE:
+
+>>> x = FirstModel.objects.all()[1] 
+>>> print(x)
+>>> x.firstname = 'marry'
+>>> x.save()              
+>>> print(x)
+ x = FirstModel.objects.all().values() 
+>>> print(x)
+<QuerySet [{'id': 1, 'firstname': 'raja', 'lastname': 'kavin'}, {'id': 2, 'firstname': 'marry', 'lastname': 'kavin1'}, {'id': 3, 'firstname': 'raja2', 'lastname': 'kavin2'}]>    
+>>>
+
+DELETE:
+a = FirstModel.objects.all().values()[2] 
+>>> a.delete() 
+'''  
 
 
 
